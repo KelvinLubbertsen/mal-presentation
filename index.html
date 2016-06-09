@@ -56,63 +56,44 @@
         <!-- Jappie part: -->
         <section>
             <h1>Algorithm</h1>
-            <h2>Simon </h2>
 
+            <ol>
+                <li>
+            $ \begin{cases}
+            \text{if } \pi_t \leq \alpha_t & A_{t+1} = A_t\\
+            \text{else} & A_{t+1} \neq A_t
+            \end{cases}$
+                </li>
+                <li>
+                    $ \alpha_{t+1} = \lambda \alpha_t + (1-\lambda) \pi_t $
+                    <br/>
+                    <small>Where $0 \leq \lambda \leq 1$</small>
+                </li>
+            </ol>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup>
 <col  class="org-left" />
 <col  class="org-left" />
 </colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">Symbol</th>
-<th scope="col" class="org-left">definition</th>
-</tr>
-</thead>
 <tbody>
 <tr>
+<td class="org-left">Time</td>
 <td class="org-left">$t$</td>
-<td class="org-left">time</td>
 </tr>
 
 <tr>
+<td class="org-left">Action in $\{C,D\}$</td>
 <td class="org-left">$A_t$</td>
-<td class="org-left">first player action in $\{C,D\}$</td>
 </tr>
 
 <tr>
+<td class="org-left">Aspiration level</td>
 <td class="org-left">$\alpha_t$</td>
-<td class="org-left">first player aspiration level</td>
 </tr>
 
 <tr>
+<td class="org-left">Payoff</td>
 <td class="org-left">$\pi^A_t$</td>
-<td class="org-left">payoff for player A</td>
-</tr>
-
-<tr>
-<td class="org-left">$\lambda$</td>
-<td class="org-left">learning rate</td>
-</tr>
-
-<tr>
-<td class="org-left">$B_t$</td>
-<td class="org-left">player B action</td>
-</tr>
-
-<tr>
-<td class="org-left">$\beta_t$</td>
-<td class="org-left">player b aspiration level</td>
-</tr>
-
-<tr>
-<td class="org-left">$\sigma$</td>
-<td class="org-left">Reward for mutual cooperation</td>
-</tr>
-
-<tr>
-<td class="org-left">$\delta$</td>
-<td class="org-left">Reward for mutual defection</td>
 </tr>
 </tbody>
 </table>
