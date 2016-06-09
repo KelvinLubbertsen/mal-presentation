@@ -9,11 +9,6 @@
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/solarized.css">
 
-    <style>
-     p.source{
-         font-size: 60%;
-     }
-    </style>
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -21,6 +16,9 @@
       .source {
         font-size: 60%;
       }
+     .example table td + td{
+         border-left: 1px #586e75 solid;
+     }
     </style>
 
     <!-- Printing and PDF exports -->
@@ -91,6 +89,7 @@
 			## Multi agent social dilemma
         </section>
 
+        <section>
         <!-- Jappie part: -->
         <section>
             <h1>Algorithm</h1>
@@ -133,6 +132,18 @@
             </tbody>
             </table>
         </section>
+        <section data-markdown class="example">
+        <script type="text/template">
+        # VS always cooporate
+
+        t | Coop | $A_t$ | $\pi_t$ | $\alpha_t$
+        --- | --- | ---- | ------- | ---   
+        0 | C | C | 3 | 4 
+        1 | C | C | 3 | 4 
+
+        </script>
+        </section>
+        </section>
 
         <section>
             <h1> Generalized dillemma </h1>
@@ -163,20 +174,34 @@
             3. Complete chaos
             </section>
             <section data-markdown>
-            # Strategies
-            ![](img/strategies.png)
+            <script type="text/template">
+            # Outcomes
+            ![](img/strategies.png) <!-- .element: width="450px" -->
+
+            Over 5000 trials.
+            </script>
             </section>
             <section data-markdown>
+            <script type="text/template">
             # Aspiration
-            ![](img/aspiration.png)
+            ![](img/aspiration.png)<!-- .element: width="650px" -->
+
+            Over 1000 trials.
+            </script>
             </section>
             <section data-markdown>
             # Contrast
             ![](img/contrast.png)
+
+            * Over 1000 trials.
+            * *As long as it is not diffiuclt to discriminate*
+
             </section>
             <section data-markdown>
+            <script type="text/template">
             # Learning rate
-            ![](img/learning-rate.png)
+            ![](img/learning-rate.png)<!-- .element: width="800px" -->
+            </script>
             </section>
         </section>
 
@@ -193,7 +218,7 @@
         # Disscussion
         <!-- zou het kunnen dat?
             -->
-        1. Only 1000 games?!
+        * Game count
         </section>
         <section data-markdown>
         # Conclusion
@@ -207,6 +232,7 @@
 
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
     <script>
       // More info https://github.com/hakimel/reveal.js#configuration
@@ -222,6 +248,11 @@
             { src: 'plugin/math/math.js', async: true }
         ]
       });
+     $(function(){
+         match = $(".example tr").not(function(i,element){
+             return $(element).children("th").size() !== 0;
+         }).addClass("fragment")
+     })
 
     </script>
   </body>
