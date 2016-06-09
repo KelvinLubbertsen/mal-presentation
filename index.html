@@ -248,12 +248,12 @@
             { src: 'plugin/math/math.js', async: true }
         ]
       });
+     // Make each section with the example class the rows of the classes pop-in
      $(function(){
          match = $(".example tr").not(function(i,element){
              return $(element).children("th").size() !== 0;
          }).addClass("fragment")
      })
-
     </script>
   </body>
 </html>
