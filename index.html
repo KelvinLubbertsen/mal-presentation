@@ -138,11 +138,54 @@
 
         t | Coop | $A_t$ | $\pi_t$ | $\alpha_t$
         --- | --- | ---- | ------- | ---   
-        0 | C | C | 3 | 4 
-        1 | C | C | 3 | 4 
+        0 | C     | C    | 3       | 4 
+        1 | C     | D    | 4       | 3.5
+        2 | C     | D    | 4       | 3.75
+        3 | C     | D    | 4       | 3.875
+
+        $$ \vdots $$
 
         </script>
         </section>
+        <section data-markdown class="example">
+        <script type="text/template">
+        # VS always cooporate II
+
+        t | Coop | $A_t$ | $\pi_t$ | $\alpha_t$
+        --- | --- | ---- | ------- | ---   
+        0 | C     | C    | 3       | 2
+        1 | C     | C    | 3       | 2.5
+        2 | C     | C    | 3       | 2.75
+        3 | C     | C    | 3       | 2.875
+
+        $$ \vdots $$
+
+        </script>
+        </section>
+        <section data-markdown class="example">
+        <script type="text/template">
+        # VS Tit for Tat
+
+        t | TT | $A_t$ | $\pi_t$ | $\alpha_t$
+        --- | --- | ---- | ------- | ---   
+        0 | C     | C    | 3       | 4 
+        1 | C     | D    | 4       | 3.5
+        2 | D     | D    | 2       | 3.75
+        3 | D     | C    | 1       | 2.87
+        4 | C     | D    | 4       | 3.435
+        5 | D     | D    | 2       | 2.715
+        5 | D     | C    | 1       | 1.85875
+
+        $$ \vdots $$
+
+        </script>
+        </section>
+        </section>
+        <section data-markdown>
+        # Possible outcomes
+        1. Convergence to certain actions (Cooperate)
+        2. Action cycle (TT)
+        3. Complete chaos ??
         </section>
 
         <section>
@@ -165,13 +208,10 @@
         <section>
             <section data-markdown>
             # Results
+            * Always satisficing vs satisficing.
             * Over many trials.
-            * Variables were set randomly
-
-            ## Possible outcomes
-            1. Convergence to certain actions
-            2. Action cycle
-            3. Complete chaos
+            * Variables were set randomly.
+            * All graphs work with percentage of total.
             </section>
             <section data-markdown>
             <script type="text/template">
