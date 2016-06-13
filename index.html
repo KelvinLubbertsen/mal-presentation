@@ -46,7 +46,7 @@
 			## Normal situation
 			- Optimizing agents
 			- Examples
-				- Dominantal strategies
+				- Dominant strategies
 				- No-regret
         </section>					
 		<section data-markdown>
@@ -63,15 +63,15 @@
 		<section data-markdown>
 			## Satisficing in game theory
 			- Algorithm by Karandikar (1998)
-			- Prisoner's dilemma analysed by Stimpson (2001)
-			- Multi agent social dilemma by Stimpson (2003)
+			- Prisoner's dilemma analyzed by Stimpson et al. (2001)
+			- Multi agent social dilemma by Stimpson & Goodrich (2003)
 		</section>
 		
 		<section data-markdown>
 			## Why?
 			- People are not always playing rational
 			- Shown for instance by John Conlisk (1996)
-			- Normally focussed on learning Nash equilibrium
+			- Normally focused on learning Nash equilibrium
 		</section>
 		
 		<section data-markdown>
@@ -99,26 +99,35 @@
 			- Uncertain situations
         </section>
 		<section data-markdown>
-			## Multi agent social dilemma
+			## Multi-agent social dilemma
 			- Generalized form of prisoner's dilemma
 			- Choose between: own goal vs. group goal
 			- Satisficing strategies perform better then pure Nash equilibrium
         </section>
 		
 		<section data-markdown>
-			## Multi agent social dilemma
+			## Multi-agent social dilemma
 			- $N$ agents
 			- Resource allocation:
 				- $M$ units of discrete resource
-				- Choose between self interested goal $S_i$ and group goal $G$
+				- Choose between self-interested goal $S_i$ and group goal $G$
+			
+		</section>
+		
+		<section data-markdown>
+			## Multi-agent social dilemma
+			- Weights for goals: $K_G = \frac{1}{NM}$ $K_S = \frac{k}{M}$
+			- $k < 1$: more interested in own goal
+			- $k > \frac{1}{N}$: more interested in group goal
+			- Range: $1 > k > \frac{1}{N}$
 		</section>
 		
 		<section data-markdown>
 			## Social dilemma properties
-			- Extreme individual rewards (self interested)
-			- Extreme average rewards (only group focussed play)
+			- Extreme individual rewards (self-interested)
+			- Extreme average rewards (only group focused play)
 			- Nash equilibrium: selfish play
-			- Nash bargaining solution: only focussed on group goal
+			- Nash bargaining solution: only focused on group goal
 		</section>
 
         <section>
@@ -280,6 +289,60 @@
         <section data-markdown>
         # Demo
         </section>
+		
+		<section>
+			<section data-markdown>
+				## Multi-agent social dilemma experiments
+				- Experiments by Stimpson & Goodrich (2003)
+					
+				- Desired properties based on Bowling & Veloso (2000)
+					- Reach Pareto efficient solution in self-play
+					- Not exploited by selfish agents
+			</section>
+			<section data-markdown>
+				## Belief based learning experiments
+				- Belief based learning based on Feltovich (2000)
+				- Does not learn mutual cooperation
+					- Theoretically shown
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+				## Q-learning
+				- Converges sometimes to Pareto optimal
+				- $M$ = 1, meaning:
+					- Agents have 2 choices: group goal or selfish goal
+				</script>
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+				## Q-learning
+				![](img/q-learning.png)<!-- .element: width="600px" -->
+				- Parameters of learning rate, discount factor and $k$ make no big difference
+				</script>
+			</section>
+			<section data-markdown>
+				## Q-learning
+				- Tend to learn best response strategies
+				- But: mutual cooperation difficult to learn
+			</section>
+			<section data-markdown>
+				## Satisficing algorithm
+				- Learning rate $\lambda$:
+					- $\lambda * 100 \%$ of previous aspiration level forms basis for new aspiration level
+				- 500 runs
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+				## Satisficing algorithm
+				![](img/satisficing-algorithm.PNG) <!-- .element: width="600px" -->
+				</script>
+			</section>
+			<section data-markdown>
+				## Satisficing algorithm
+				- Converges to Nash equilibrium when playing against self-play
+				- Converges to Nash bargaining equilibrium when playing against satisficing algorithm
+			</section>
+		</section>
 
         <section data-markdown>
         # Appliction
@@ -288,7 +351,9 @@
         </section>
 
         <section data-markdown>
-        # Disscussion
+        # Discussion
+			- Win-stay lose-shift vs Satisficing strategies
+			- Applications outside game theory
         <!-- zou het kunnen dat?
             -->
         * Game count
