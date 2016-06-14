@@ -99,47 +99,14 @@
 			- Social dilemma
 			- Uncertain situations
         </section>
-		<section data-markdown>
-			## Multi-agent social dilemma
-			- Generalized form of prisoner's dilemma
-			- Choose between: own goal vs. group goal
-			- Satisficing strategies perform better then pure Nash equilibrium
-        </section>
-		
-		<section data-markdown>
-			## Multi-agent social dilemma
-			- $N$ agents
-			- Resource allocation:
-				- $M$ units of discrete resource
-				- Choose between self-interested goal $S_i$ and group goal $G$
-			
-		</section>
-		
-		<section data-markdown>
-			## Multi-agent social dilemma
-			- Weights for goals: $K_G = \frac{1}{NM}$ $K_S = \frac{k}{M}$
-			- $k < 1$: more interested in own goal
-			- $k > \frac{1}{N}$: more interested in group goal
-			- Range: $1 > k > \frac{1}{N}$
-		</section>
-		
-		<section data-markdown>
-			## Social dilemma properties
-			- Extreme individual rewards (self-interested)
-			- Extreme average rewards (only group focused play)
-			- Nash equilibrium: selfish play
-			- Nash bargaining solution: only focused on group goal
-		</section>
-
         <section>
-        <!-- Jappie part: -->
         <section>
             <h1>Algorithm</h1>
             <!-- mention symon-->
             <ol>
                 <li>
             $ \begin{cases}
-            \text{if } \pi_t \leq \alpha_t & A_{t+1} = A_t\\
+            \text{if } \pi_t \geq \alpha_t & A_{t+1} = A_t\\
             \text{else} & A_{t+1} \neq A_t
             \end{cases}$
                 </li>
@@ -169,7 +136,7 @@
                 </tr>
                 <tr>
                     <td class="org-left">Utility</td>
-                    <td class="org-left">$\pi^A_t$</td>
+                    <td class="org-left">$\pi_t$</td>
                 </tr>
             </tbody>
             </table>
@@ -216,13 +183,22 @@
         3 | D     | C    | 1       | 2.87
         4 | C     | D    | 4       | 3.435
         5 | D     | D    | 2       | 2.715
-        5 | D     | C    | 1       | 1.85875
+        6 | D     | C    | 1       | 1.85875
 
         $$ \vdots $$
 
         </script>
         </section>
         </section>
+
+        <section data-markdown>
+        # Experimental results
+        * Always satisficing vs satisficing.
+        * Over many trials.
+        * Variables were set randomly.
+        * All graphs work with percentage of total.
+        </section>
+
         <section data-markdown>
         # Possible outcomes
         1. Convergence to certain actions (Cooperate)
@@ -230,6 +206,22 @@
         3. Complete chaos ??
         </section>
 
+        <section data-markdown>
+        <script type="text/template">
+        # Outcomes
+        ![](img/strategies.png) <!-- .element: width="450px" -->
+
+        Over 5000 trials.
+        </script>
+        </section>
+        <section data-markdown>
+        <script type="text/template">
+        # Aspiration
+        ![](img/aspiration.png)<!-- .element: width="650px" -->
+
+        Over 1000 trials.
+        </script>
+        </section>
         <section>
             <h1> Generalized dillemma </h1>
             <table>
@@ -247,50 +239,52 @@
                Where $(0<\delta < \sigma < 1)$ and $\sigma > 0.5$.
            </p>
         </section>
-        <section>
-            <section data-markdown>
-            # Results
-            * Always satisficing vs satisficing.
-            * Over many trials.
-            * Variables were set randomly.
-            * All graphs work with percentage of total.
-            </section>
-            <section data-markdown>
-            <script type="text/template">
-            # Outcomes
-            ![](img/strategies.png) <!-- .element: width="450px" -->
-
-            Over 5000 trials.
-            </script>
-            </section>
-            <section data-markdown>
-            <script type="text/template">
-            # Aspiration
-            ![](img/aspiration.png)<!-- .element: width="650px" -->
-
-            Over 1000 trials.
-            </script>
-            </section>
-            <section data-markdown>
-            # Contrast
-            ![](img/contrast.png)
-
-            * Over 1000 trials.
-            * *As long as it is not diffiuclt to discriminate*
-
-            </section>
-            <section data-markdown>
-            <script type="text/template">
-            # Learning rate
-            ![](img/learning-rate.png)<!-- .element: width="800px" -->
-            </script>
-            </section>
-        </section>
-
         <section data-markdown>
-        # Demo
+        # Contrast
+        ![](img/contrast.png)
+
+        * Over 1000 trials.
+        * *As long as it is not diffiuclt to discriminate*
+
+        </section>
+        <section data-markdown>
+        <script type="text/template">
+        # Learning rate
+        ![](img/learning-rate.png)<!-- .element: width="800px" -->
+        </script>
+        </section>
+		<section data-markdown>
+			## Multi-agent social dilemma
+			- Generalized form of prisoner's dilemma
+			- Choose between: own goal vs. group goal
+			- Satisficing strategies perform better then pure Nash equilibrium
         </section>
 		
+		<section data-markdown>
+			## Multi-agent social dilemma
+			- $N$ agents
+			- Resource allocation:
+				- $M$ units of discrete resource
+				- Choose between self-interested goal $S_i$ and group goal $G$
+			
+		</section>
+		
+		<section data-markdown>
+			## Multi-agent social dilemma
+			- Weights for goals: $K_G = \frac{1}{NM}$ $K_S = \frac{k}{M}$
+			- $k < 1$: more interested in own goal
+			- $k > \frac{1}{N}$: more interested in group goal
+			- Range: $1 > k > \frac{1}{N}$
+		</section>
+		
+		<section data-markdown>
+			## Social dilemma properties
+			- Extreme individual rewards (self-interested)
+			- Extreme average rewards (only group focused play)
+			- Nash equilibrium: selfish play
+			- Nash bargaining solution: only focused on group goal
+		</section>
+
 		<section>
 			<section data-markdown>
 				## Multi-agent social dilemma experiments
@@ -345,26 +339,19 @@
 				- Converges to Nash bargaining equilibrium when playing against satisficing algorithm
 			</section>
 		</section>
-
         <section data-markdown>
-        # Appliction
-        * Uncertain situations
-        * Current algorithm only good for 2 decision based games
+        # Demo
         </section>
+		
 
-        <section data-markdown>
-        # Discussion
-			- Win-stay lose-shift vs Satisficing strategies
-			- Applications outside game theory
-        <!-- zou het kunnen dat?
-            -->
-        * Game count
-        </section>
         <section data-markdown>
         # Conclusion
+        - Saticificng play is a good default.
         </section>
         <section data-markdown>
-        # Questions?
+        # Discussion
+        - Win-stay lose-shift vs Satisficing strategies
+        - Applications outside game theory
         </section>
 
       </div>
