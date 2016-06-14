@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Satisficing play</title>
+    <title>Satisficing strategies</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/solarized.css">
@@ -46,21 +46,32 @@
 			## Normal situation
 			- Optimizing agents
 			- Examples
-				- Dominantal strategies
+				- Dominant strategies
 				- No-regret
-        </section>		
+        </section>					
 		<section data-markdown>
+			<script type="text/template">
 			## Satisficing
 			- More natural: satisficing
-			- Introduced by Herbert Simon (1997)
+			- Introduced by Herbert Simon
 			- "good enough"
+			
+			![](img/simon.png) 
+			</script>
+		</section>
+		
+		<section data-markdown>
+			## Satisficing in game theory
+			- Algorithm by Karandikar (1998)
+			- Prisoner's dilemma analyzed by Stimpson et al. (2001)
+			- Multi agent social dilemma by Stimpson & Goodrich (2003)
 		</section>
 		
 		<section data-markdown>
 			## Why?
 			- People are not always playing rational
 			- Shown for instance by John Conlisk (1996)
-			- Normally focussed on learning Nash equilibrium
+			- Normally focused on learning Nash equilibrium
 		</section>
 		
 		<section data-markdown>
@@ -73,21 +84,51 @@
 			## Assumptions
 			- Such assumptions are:
 				- Structure of game known to players
-				- Players aware of other player's descisions & payoffs
+				- Players aware of other player's decisions & payoffs
 				- Players aware that they are in a game situation
 			- Often at least one assumption involved
         </section>
 		<section data-markdown>
 			## Assumptions
 			- Limiting
-			- Sometimes structure of game even not known by descision maker
+			- Sometimes structure of game even not known by decision maker
 		</section>
         <section data-markdown>
-			## Applications
+			## When?
+			- Social dilemma
+			- Uncertain situations
         </section>
 		<section data-markdown>
-			## Multi agent social dilemma
+			## Multi-agent social dilemma
+			- Generalized form of prisoner's dilemma
+			- Choose between: own goal vs. group goal
+			- Satisficing strategies perform better then pure Nash equilibrium
         </section>
+		
+		<section data-markdown>
+			## Multi-agent social dilemma
+			- $N$ agents
+			- Resource allocation:
+				- $M$ units of discrete resource
+				- Choose between self-interested goal $S_i$ and group goal $G$
+			
+		</section>
+		
+		<section data-markdown>
+			## Multi-agent social dilemma
+			- Weights for goals: $K_G = \frac{1}{NM}$ $K_S = \frac{k}{M}$
+			- $k < 1$: more interested in own goal
+			- $k > \frac{1}{N}$: more interested in group goal
+			- Range: $1 > k > \frac{1}{N}$
+		</section>
+		
+		<section data-markdown>
+			## Social dilemma properties
+			- Extreme individual rewards (self-interested)
+			- Extreme average rewards (only group focused play)
+			- Nash equilibrium: selfish play
+			- Nash bargaining solution: only focused on group goal
+		</section>
 
         <section>
         <!-- Jappie part: -->
@@ -248,6 +289,61 @@
         <section data-markdown>
         # Demo
         </section>
+		
+		<section>
+			<section data-markdown>
+				## Multi-agent social dilemma experiments
+				- Experiments by Stimpson & Goodrich (2003)
+					
+				- Desired properties based on Bowling & Veloso (2000)
+					- Reach Pareto efficient solution in self-play
+					- Not exploited by selfish agents
+			</section>
+			<section data-markdown>
+				## Belief based learning experiments
+				- Belief based learning based on Feltovich (2000)
+				- Set of weights over opponent's actions
+				- Does not learn mutual cooperation
+					- Theoretically shown
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+				## Q-learning
+				- Converges sometimes to Pareto optimal
+				- $M$ = 1, meaning:
+					- Agents have 2 choices: group goal or selfish goal
+				</script>
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+				## Q-learning
+				![](img/q-learning.PNG)<!-- .element: width="600px" -->
+				- Parameters of learning rate, discount factor and $k$ make no big difference
+				</script>
+			</section>
+			<section data-markdown>
+				## Q-learning
+				- Tend to learn best response strategies
+				- But: mutual cooperation difficult to learn
+			</section>
+			<section data-markdown>
+				## Satisficing algorithm
+				- Learning rate $\lambda$:
+					- $\lambda * 100 \%$ of previous aspiration level forms basis for new aspiration level
+				- 500 runs
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+				## Satisficing algorithm
+				![](img/satisficing-algorithm.png) <!-- .element: width="600px" -->
+				</script>
+			</section>
+			<section data-markdown>
+				## Satisficing algorithm
+				- Converges to Nash equilibrium when playing against self-play
+				- Converges to Nash bargaining equilibrium when playing against satisficing algorithm
+			</section>
+		</section>
 
         <section data-markdown>
         # Appliction
@@ -256,7 +352,9 @@
         </section>
 
         <section data-markdown>
-        # Disscussion
+        # Discussion
+			- Win-stay lose-shift vs Satisficing strategies
+			- Applications outside game theory
         <!-- zou het kunnen dat?
             -->
         * Game count
